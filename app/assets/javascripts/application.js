@@ -10,6 +10,23 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery
 //= require rails-ujs
 //= require turbolinks
+//= require jquery.fileupload
 //= require_tree .
+$(document).ready(function() {
+  $('.image-files').each(function() {
+    var $element = $(this);
+    $element.fileupload({
+      type: "POST",
+      sequentialUploads: true,
+      dropZone: $(".dropzone"),
+      done: function (e, data) {
+        if(data._response && data._response.textStatus && data._response.textStatus == "success") {
+          $("#images").append("<img src='"+data.result.image_source.url+"' width='120' height='120'/>");
+        }
+      }
+    });
+  })
+});

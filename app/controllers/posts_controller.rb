@@ -63,6 +63,20 @@ class PostsController < ApplicationController
     end
   end
 
+  def create_images
+    params[:images].each{ |image|
+      post = Post.find(params[:post_id])
+
+      @image = Image.new(image_source: image)
+      @image.post = post
+      @image.save
+
+      respond_to do |format|
+        format.json { render json: @image}
+      end
+    }
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post

@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+ .dropzone {
+     border: 2px dashed rgb(0, 255, 17);
+     border-radius: 4px;
+     color: rgb(0, 0, 0);
+     font-family: helvetica;
+     font-weight: 200;
+     font-size: 20px;
+     height: 20vh;
+     line-height: 30px;
+     position: relative;
+     text-align: center;
+     width: 100%;
+ }

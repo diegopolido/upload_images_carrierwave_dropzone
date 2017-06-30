@@ -4,11 +4,16 @@
   <strong>Title:</strong>
   <%= @post.title %>
 </p>
-<p>
+<p id="images">
   <% @post.images.each do |img| %>
     <%= image_tag img.image_source.url, class: "img-thumb", width: "120", height: "120" if img.image_source %>
   <% end %>
 </p>
-
+<div class="dropzone">
+<p>
+  Arraste imagens aqui
+</p>
+<%= file_field_tag "images[]", multiple: true, class: "image-files", "data-url": post_create_images_path(post_id: @post.id) %>
+</div>
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
