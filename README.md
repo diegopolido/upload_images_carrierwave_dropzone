@@ -1,24 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+An very simple running example saving images by dragging and dropping (with carrierwave and jquery)
 
-Things you may want to cover:
+How to run:
 
-* Ruby version
+```sh
+$ git clone git@github.com:diegopolido/upload_images_carrierwave_dropzone.git
+$ cd upload_images_carrierwave_dropzone
+$ bundle install
+$ bundle exec rake db:create
+$ bundle exec rake db:migrate
+$ rails s
+```
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Now go to [http://localhost:3000/posts](http://localhost:3000/posts), save a post with a name (optionally save with a first image) and then on show view, drag images on drop area
