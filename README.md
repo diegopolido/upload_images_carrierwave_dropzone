@@ -1,6 +1,6 @@
 # README
 
-An very simple running example saving images by dragging and dropping (with carrierwave and jquery)
+An very simple working example saving images by dragging and dropping (with carrierwave and jquery)
 
 How to run:
 
